@@ -13,4 +13,9 @@
     <string name="plat">Plat</string>
     <string name="entr_e">Entrée :</string>
     <string name="repas">REPAS</string>
+    <string name="meteo">METEO</string>
+    <string name="date">Date :</string>
+    <string name="heure">Heure :</string>
+    <string name="vitesse_du_vent_km_h">Vitesse du vent km/h</string>
+    <string name="temps">Temps :</string>
 </resources>

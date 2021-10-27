@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.repas);
+        setContentView(R.layout.meteo);
 
         Integer v = 54;
         Integer n = v / 9 - 2;
