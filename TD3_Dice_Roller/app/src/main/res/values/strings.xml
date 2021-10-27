@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TD3_Dice_Roller</string>
+    <string name="lancer_le_d">Lancer le dé</string>
+</resources>
