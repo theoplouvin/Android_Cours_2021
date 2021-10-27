@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">TD2</string>
     <string name="mots_de_passe">Mots de passe</string>
+    <string name="annuler">Annuler</string>
+    <string name="valider">Valider</string>
+    <string name="soir">Soir</string>
+    <string name="midi">Midi</string>
+    <string name="horaire">Horaire :</string>
+    <string name="fruit">Fruit</string>
+    <string name="fromage">Fromage</string>
+    <string name="suppl_ments">Suppléments :</string>
+    <string name="choix">Choix</string>
+    <string name="plat">Plat</string>
+    <string name="entr_e">Entrée :</string>
+    <string name="repas">REPAS</string>
 </resources>
