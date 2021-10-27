@@ -18,4 +18,11 @@
     <string name="heure">Heure :</string>
     <string name="vitesse_du_vent_km_h">Vitesse du vent km/h</string>
     <string name="temps">Temps :</string>
+    <string-array name="temps_choose">
+        <item>Soleil</item>
+        <item>Nuageux</item>
+        <item>Orage</item>
+        <item>Pluie</item>
+        <item>Autre</item>
+    </string-array>
 </resources>
