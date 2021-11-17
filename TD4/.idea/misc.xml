@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TD4/app/src/main/res/layout/activity_details.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TD4/app/src/main/res/layout/activity_login.xml" value="0.36594202898550726" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TD4/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TD4/app/src/main/res/layout/activity_news.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TD4/app/src/main/res/layout/login.xml" value="0.36594202898550726" />
       </map>
     </option>
   </component>
