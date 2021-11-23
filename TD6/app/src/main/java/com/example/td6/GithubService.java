@@ -1,5 +1,8 @@
 package com.example.td6;
 
+import java.util.List;
+
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -13,4 +16,7 @@ public interface GithubService {
 
     @GET("/search/repositories")
     List<Repo> searchRepos(@Query("q") String query);
+
+    @GET("/users/{user}/repos")
+    Call<List<Repo>> listRepos(@Path("user") String user);
 }
