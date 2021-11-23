@@ -1,9 +1,9 @@
 package com.example.td5;
 
 public class Contact {
-    String nom;
-    String prenom;
-    String imageUrl;
+    private String nom;
+    private String prenom;
+    private String imageUrl;
 
     public Contact(String prenom, String nom, String imageUrl) {
         this.prenom = prenom;
