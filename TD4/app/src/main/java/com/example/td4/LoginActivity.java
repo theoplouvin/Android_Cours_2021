@@ -41,8 +41,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                intent.putExtra("login", editTextId.getText().toString());
-                startActivity(intent);
+                //intent.putExtra("login", editTextId.getText().toString());
+                //startActivity(intent);
+
+                NewsListApplication app = (NewsListApplication) getApplicationContext();
+                app.setLogin(editTextId.getText().toString());
 
                 if(String.valueOf(editTextId.getText()).equals(ID_DEFAULT) && String.valueOf(editTextMdp.getText()).equals(MDP_DEFAULT)) {
                     startActivity(news_activity);

@@ -2,6 +2,7 @@ package com.example.td4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ public class NewsActivity extends AppCompatActivity {
         finishAffinity();
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,12 +33,16 @@ public class NewsActivity extends AppCompatActivity {
 
         Intent news_activity = new Intent(this, DetailsActivity.class);
 
-        Intent intent = getIntent();
+        /*Intent intent = getIntent();
         String login = null;
         if (intent.hasExtra("login")) {
             login = intent.getStringExtra("login");
         }
+        textforcompte.setText(login);
+        */
 
+        NewsListApplication app = (NewsListApplication) getApplicationContext();
+        String login = app.getLogin();
         textforcompte.setText(login);
 
         button_detail.setOnClickListener(new View.OnClickListener(){
