@@ -45,8 +45,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ViewHo
         TextView prenom = holder.prenom;
         prenom.setText(contact.getPrenom());
 
+
         ImageView image = holder.image;
-        Glide.with(holder.image).load(contact.getImageUrl()).into(image);
+        Glide.with(holder.image.getContext()).load(contact.getImageUrl()).into(image);
 
     }
 
