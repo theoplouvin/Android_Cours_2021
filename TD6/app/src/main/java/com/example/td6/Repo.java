@@ -1,10 +1,20 @@
 package com.example.td6;
 
+import java.util.List;
+
 public class Repo {
+
     private int id;
     private String name;
     private String full_name;
     private String html_url;
+
+    public Repo(int id, String name, String full_name, String html_url) {
+        this.id = id;
+        this.name = name;
+        this.full_name = full_name;
+        this.html_url = html_url;
+    }
 
     public int getId() {
         return id;

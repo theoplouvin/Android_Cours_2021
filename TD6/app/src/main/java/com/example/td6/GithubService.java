@@ -11,11 +11,8 @@ public interface GithubService {
 
     public static final String ENDPOINT = "https://api.github.com";
 
-    @GET("/users/{user}/repos")
-    List<Repo> listRepos(@Path("user") String user);
-
     @GET("/search/repositories")
-    List<Repo> searchRepos(@Query("q") String query);
+    Call<Repos> searchRepos(@Query("q") String query);
 
     @GET("/users/{user}/repos")
     Call<List<Repo>> listRepos(@Path("user") String user);
