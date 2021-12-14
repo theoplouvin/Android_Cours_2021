@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
         MovieLoad data = new MovieLoad(this);
         data.popularData();
 
-        //MovieAdapter adapter = new MovieAdapter();
-       // rvMovies.setAdapter(adapter);
-       // rvMovies.setLayoutManager(new GridLayoutManager(this,2));
-
     }
 
 

@@ -43,7 +43,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         title.setText(mMovie.get(position).getOriginal_title());
 
-        Glide.with(holder.image).load("https://image.tmdb.org/t/p/original/" + mMovie.get(position).getBackdrop_path())
+        Glide.with(holder.image).load("https://image.tmdb.org/t/p/w500/" + mMovie.get(position).getPoster_path())
                 .apply(new RequestOptions().override(200,600)).into(image);
 
     }

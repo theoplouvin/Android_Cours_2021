@@ -4,22 +4,22 @@ public class Movie {
 
     private int id;
     private String original_title;
-    private String backdrop_path;
+    private String poster_path;
     private String overview;
 
-    public Movie(int id, String original_title, String backdrop_path, String overview) {
+    public Movie(int id, String original_title, String poster_path, String overview) {
         this.id = id;
         this.original_title = original_title;
-        this.backdrop_path = backdrop_path;
+        this.poster_path = poster_path;
         this.overview = overview;
     }
 
-    public String getBackdrop_path() {
-        return backdrop_path;
+    public String getPoster_path() {
+        return poster_path;
     }
 
-    public void setBackdrop_path(String backdrop_path) {
-        this.backdrop_path = backdrop_path;
+    public void setPoster_path(String backdrop_path) {
+        this.poster_path = backdrop_path;
     }
 
     public int getId() {
