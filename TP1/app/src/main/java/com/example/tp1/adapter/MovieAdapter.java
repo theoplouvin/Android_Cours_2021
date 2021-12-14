@@ -1,17 +1,23 @@
 package com.example.tp1.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.tp1.DetailMovie;
 import com.example.tp1.R;
 import com.example.tp1.models.Movie;
 
@@ -19,9 +25,11 @@ import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     private final List<Movie> mMovie;
+    private ReclyclerViewClickListener listener;
 
-    public MovieAdapter(List<Movie> film) {
+    public MovieAdapter(List<Movie> film, ReclyclerViewClickListener listener) {
         this.mMovie = film;
+        this.listener = listener;
     }
 
     @NonNull
@@ -53,16 +61,27 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         return mMovie.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         public ImageView image;
         public TextView title;
 
         public ViewHolder(View itemView){
             super(itemView);
 
-            image = (ImageView) itemView.findViewById(R.id.imageMovie);
-            title = (TextView) itemView.findViewById(R.id.nameMovie);
+            image = itemView.findViewById(R.id.imageMovie);
+            title = itemView.findViewById(R.id.nameMovie);
+
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(itemView, getAdapterPosition());
+        }
+    }
+
+    public interface ReclyclerViewClickListener{
+        void onClick(View v, int position);
     }
 
 }

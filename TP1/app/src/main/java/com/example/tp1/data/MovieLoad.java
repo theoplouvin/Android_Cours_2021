@@ -1,10 +1,13 @@
 package com.example.tp1.data;
 
+import android.content.Intent;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.tp1.DetailMovie;
 import com.example.tp1.MainActivity;
 import com.example.tp1.R;
 import com.example.tp1.adapter.MovieAdapter;
@@ -21,11 +24,12 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class MovieLoad {
+public class MovieLoad{
 
     private ApiService movieService;
     private MainActivity activity;
     private RecyclerView rvMovies;
+    private MovieAdapter.ReclyclerViewClickListener listener;
 
     public MovieLoad(MainActivity activity) {
         movieService = new Retrofit.Builder()
@@ -45,9 +49,11 @@ public class MovieLoad {
                 Toast toast = Toast.makeText(activity, "Data from API ok", Toast.LENGTH_SHORT);
                 toast.show();
 
-                MovieAdapter adapter = new MovieAdapter(allMovies);
+                setOnClickListner(allMovies);
+                MovieAdapter adapter = new MovieAdapter(allMovies, listener);
                 rvMovies.setAdapter(adapter);
                 rvMovies.setLayoutManager(new GridLayoutManager(activity.getApplicationContext(), 2));
+
             }
 
             @Override
@@ -57,4 +63,17 @@ public class MovieLoad {
             }
         });
     }
+
+    private void setOnClickListner(List<Movie> allMovies){
+        listener = new MovieAdapter.ReclyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent = new Intent(activity.getApplicationContext(), DetailMovie.class);
+                intent.putExtra("id", allMovies.get(position).getId());
+                activity.startActivity(intent);
+            }
+        };
+    }
+
+
 }
