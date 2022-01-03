@@ -5,12 +5,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.tp1.models.Genre;
 import com.example.tp1.models.Movie;
 import com.example.tp1.service.ApiService;
+
+import java.util.List;
+import java.util.stream.Stream;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,8 +29,6 @@ public class DetailMovie extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.detail_movie);
 
-            RecyclerView rvMoviesDetails = (RecyclerView) findViewById(R.id.moviesRecyclerView);
-
             int movie_id = getIntent().getIntExtra("id", 0);
 
             ApiService movieService = new Retrofit.Builder()
@@ -38,7 +40,7 @@ public class DetailMovie extends AppCompatActivity {
 
             movieService.detailFilm( movie_id,"0bd82c8fbc70e6eae3f195e62d60a90a").enqueue(new Callback<Movie>() {
                 @Override
-                public void onResponse(Call<Movie> call, Response<Movie> response) {
+                public void onResponse(@NonNull Call<Movie> call, @NonNull Response<Movie> response) {
                     Toast toast = Toast.makeText(getApplicationContext(), "Data from API for Detail ok", Toast.LENGTH_SHORT);
                     toast.show();
 
@@ -49,12 +51,26 @@ public class DetailMovie extends AppCompatActivity {
                             .load("https://image.tmdb.org/t/p/original/" + movie.getBackdrop_path())
                             .into(imageMovie);
 
-                    TextView text = findViewById(R.id.descriptionDetail);
-                    text.setText(movie.getOriginal_title());
+                    TextView title = findViewById(R.id.filmTitle);
+                    title.setText(movie.getOriginal_title());
+
+                    TextView description = findViewById(R.id.descriptionDetail);
+                    description.setText(movie.getOverview());
+
+                    TextView date = findViewById(R.id.dateDetail);
+                    date.setText(movie.getRelease_date());
+
+                    TextView genre = findViewById(R.id.genreDetail);
+                    List<Genre> genreTab = movie.getGenres();
+                    StringBuilder str = new StringBuilder();
+                    for(Genre genreId : genreTab){
+                        str.append("- ").append(genreId.getName()).append("\n");
+                    }
+                    genre.setText(str.toString());
                 }
 
                 @Override
-                public void onFailure(Call<Movie> call, Throwable t) {
+                public void onFailure(@NonNull Call<Movie> call, @NonNull Throwable t) {
                     Toast toast = Toast.makeText(getApplicationContext(), "onFailure Api  ", Toast.LENGTH_SHORT);
                     toast.show();
                 }

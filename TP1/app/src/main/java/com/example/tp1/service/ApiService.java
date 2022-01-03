@@ -17,4 +17,11 @@ public interface ApiService {
     @GET("/3/movie/{id}")
     Call<Movie> detailFilm(@Path("id") int id, @Query("api_key") String apiKey);
 
+    @GET("/3/movie/upcoming")
+    Call<ListMovies> upcomingFilm(@Query("api_key") String apiKey);
+
+    @GET("/3/search/movie")
+    Call<ListMovies> searchMovies(@Query("api_key") String apiKey, @Query("query") String query);
+
+
 }
