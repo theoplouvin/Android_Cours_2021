@@ -30,6 +30,7 @@ public class DetailMovie extends AppCompatActivity {
             setContentView(R.layout.detail_movie);
 
             int movie_id = getIntent().getIntExtra("id", 0);
+            String language = getIntent().getStringExtra("language");
 
             ApiService movieService = new Retrofit.Builder()
                     .baseUrl(ApiService.ENDPOINT)
@@ -38,12 +39,9 @@ public class DetailMovie extends AppCompatActivity {
                     .create(ApiService.class);
 
 
-            movieService.detailFilm( movie_id,"0bd82c8fbc70e6eae3f195e62d60a90a").enqueue(new Callback<Movie>() {
+            movieService.detailFilm( movie_id,"0bd82c8fbc70e6eae3f195e62d60a90a", language).enqueue(new Callback<Movie>() {
                 @Override
                 public void onResponse(@NonNull Call<Movie> call, @NonNull Response<Movie> response) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Data from API for Detail ok", Toast.LENGTH_SHORT);
-                    toast.show();
-
                     Movie movie = response.body();
 
                     ImageView imageMovie = findViewById(R.id.imageMovieDetail);

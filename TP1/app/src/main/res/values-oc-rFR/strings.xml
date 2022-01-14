@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TP1</string>
+    <string name="popular_title">Populaire</string>
+    <string name="upcoming_title">A venir</string>
+    <string name="description">Description</string>
+    <string name="release_date">Date de sortie</string>
+    <string name="genre">Genre</string>
+    <string name="search">Recherche</string>
+    <string name="movie_name">Nom du film</string>
+    <string name="settings">Paramètre</string>
+</resources>

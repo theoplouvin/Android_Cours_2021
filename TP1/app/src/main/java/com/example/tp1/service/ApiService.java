@@ -12,16 +12,16 @@ public interface ApiService {
     public static final String ENDPOINT = "https://api.themoviedb.org";
 
     @GET("/3/movie/popular")
-    Call<ListMovies> popularFilm(@Query("api_key") String apiKey);
+    Call<ListMovies> popularFilm(@Query("api_key") String apiKey, @Query("language") String language, @Query("page") int page);
 
     @GET("/3/movie/{id}")
-    Call<Movie> detailFilm(@Path("id") int id, @Query("api_key") String apiKey);
+    Call<Movie> detailFilm(@Path("id") int id, @Query("api_key") String apiKey, @Query("language") String language);
 
     @GET("/3/movie/upcoming")
-    Call<ListMovies> upcomingFilm(@Query("api_key") String apiKey);
+    Call<ListMovies> upcomingFilm(@Query("api_key") String apiKey, @Query("language") String language);
 
     @GET("/3/search/movie")
-    Call<ListMovies> searchMovies(@Query("api_key") String apiKey, @Query("query") String query);
+    Call<ListMovies> searchMovies(@Query("api_key") String apiKey, @Query("query") String query, @Query("language") String language);
 
 
 }

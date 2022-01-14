@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/drawable-v24/ic_baseline_av_timer_24.xml" value="0.3828125" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/drawable-v24/ic_baseline_search_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/drawable-v24/ic_baseline_setting.xml" value="0.3828125" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/drawable-v24/ic_baseline_trending_up_24.xml" value="0.26256410256410256" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/layout/activity_main.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/layout/activity_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/layout/activity_settings.xml" value="0.1" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/layout/detail_movie.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/layout/popular_activity_item.xml" value="0.15789473684210525" />
         <entry key="..\:/Users/Theo/Desktop/Ecole/Android_Cours_2021/TP1/app/src/main/res/menu/button_nav_menu.xml" value="0.25052083333333336" />

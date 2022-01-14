@@ -20,4 +20,10 @@
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/search"
         app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_setting"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_setting"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom"/>
 </menu>

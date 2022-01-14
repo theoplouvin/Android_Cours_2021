@@ -33,6 +33,7 @@ public class MovieLoad {
     private MainActivity activity;
     private RecyclerView rvMovies;
     private MovieAdapter.ReclyclerViewClickListener listener;
+    private String language;
 
     public MovieLoad(MainActivity activity) {
         movieService = new Retrofit.Builder()
@@ -42,10 +43,15 @@ public class MovieLoad {
                 .create(ApiService.class);
         this.activity = activity;
         this.rvMovies = (RecyclerView) activity.findViewById(R.id.moviesRecyclerView);
+        this.language="EN";
     }
 
-    public void popularData() {
-        movieService.popularFilm("0bd82c8fbc70e6eae3f195e62d60a90a").enqueue(new Callback<ListMovies>() {
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
+    public void popularData(int page) {
+        movieService.popularFilm("0bd82c8fbc70e6eae3f195e62d60a90a", language, page).enqueue(new Callback<ListMovies>() {
             @Override
             public void onResponse(@NonNull Call<ListMovies> call, @NonNull Response<ListMovies> response) {
                 assert response.body() != null;
@@ -66,7 +72,7 @@ public class MovieLoad {
     }
 
     public void upcomingData() {
-        movieService.upcomingFilm("0bd82c8fbc70e6eae3f195e62d60a90a").enqueue(new Callback<ListMovies>() {
+        movieService.upcomingFilm("0bd82c8fbc70e6eae3f195e62d60a90a", language).enqueue(new Callback<ListMovies>() {
             @Override
             public void onResponse(@NonNull Call<ListMovies> call, @NonNull Response<ListMovies> response) {
                 assert response.body() != null;
@@ -87,7 +93,7 @@ public class MovieLoad {
     }
 
     public void searchMovies(String search) {
-        movieService.searchMovies("0bd82c8fbc70e6eae3f195e62d60a90a", search).enqueue(new Callback<ListMovies>() {
+        movieService.searchMovies("0bd82c8fbc70e6eae3f195e62d60a90a", search, language).enqueue(new Callback<ListMovies>() {
             @Override
             public void onResponse(@NonNull Call<ListMovies> call, @NonNull Response<ListMovies> response) {
                 assert response.body() != null;
@@ -118,6 +124,7 @@ public class MovieLoad {
             public void onClick(View v, int position) {
                 Intent intent = new Intent(activity.getApplicationContext(), DetailMovie.class);
                 intent.putExtra("id", allMovies.get(position).getId());
+                intent.putExtra("language", language);
                 activity.startActivity(intent);
             }
         };
